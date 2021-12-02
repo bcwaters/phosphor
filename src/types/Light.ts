@@ -1,3 +1,6 @@
+import { loggers } from 'winston';
+const logger = loggers.get('logger')
+
 interface IHaContextProps {
   entityId: string
   attributes: string
@@ -25,7 +28,7 @@ export class Light implements ILight {
   }
 
   update(state: any) {
-    console.log(state)
+    logger.info(state)
     this.state = state
   }
 
